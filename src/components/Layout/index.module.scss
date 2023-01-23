@@ -1,3 +1,5 @@
+@import "../../utils/variables.scss";
+
 .layout {
   width: 100%;
   height: 100%;
@@ -5,22 +7,22 @@
 
   display: flex;
   justify-content: center;
-  padding: var(--little_padding);
+  padding: $gap;
 
   @media (min-width: 420px) {
-    padding: var(--padding);
+    padding: $gap;
   }
 
   @media (min-width: 700px) {
-    padding: var(--big_padding);
+    padding: $gap;
   }
   
   @media (min-width: 900px) {
-    padding: calc(var(--big_padding) * 2);
+    padding:$big-gap * 2;
   }
 }
 
-.container__content {
+.containerContent {
   width: 100%;
   height: 100%;
   max-width: 1240px;
