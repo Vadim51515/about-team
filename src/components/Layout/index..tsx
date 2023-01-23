@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from "./Layout.module.scss";
+import styles from "./index.module.scss";
 
 type PropsType = {
   children?: ReactNode;
