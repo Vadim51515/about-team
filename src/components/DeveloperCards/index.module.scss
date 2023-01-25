@@ -1,0 +1,105 @@
+@import "utils/variables.scss";
+
+.developers {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 100%;
+}
+
+.container {
+    height: 250px;
+    display: flex;
+}
+.hoveredContainer {
+    // border: 1px solid $primary-color;
+    border-radius: 10px;
+    .card {
+        border-width: 0;
+        border-radius: 10px 0px 0px 10px;
+        .info {
+            visibility: hidden;
+            height: 0;
+        }
+    }
+    .leftCard {
+        border-radius: 0px 10px 10px 0px;
+    }
+}
+
+.card {
+    width: 250px;
+
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    background-color: $placeholder-color;
+    border: 1px solid $placeholder-color;
+}
+
+.image {
+    margin: auto 0;
+    svg {
+        height: 180px;
+    }
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: height ease-in-out 0.4s;
+}
+.name {
+    font-size: 20px;
+}
+.role {
+    font-size: 18px;
+    color: $primary-color;
+}
+.short_description {
+    margin-top: 8px;
+}
+.skills {
+    margin-left: 24px;
+}
+
+.menu {
+    width: 0px;
+    transition: left 0.7s, width 0.7s cubic-bezier(0.66, 0.52, 0, 1);
+
+    background-color: $placeholder-color;
+    border-radius: 0px 10px 10px 0px;
+
+    .parent {
+        display: flex;
+        padding: 24px;
+        visibility: hidden;
+    }
+}
+.open {
+    width: calc(100% - 250px);
+    .parent {
+        visibility: visible;
+    }
+    .info {
+        align-items: flex-start;
+    }
+}
+
+.leftContainer {
+    flex-direction: row-reverse;
+    .menu {
+        border-radius: 10px 0px 0px 10px;
+    }
+}
+.leftCard {
+    margin-left: auto;
+}
