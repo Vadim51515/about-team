@@ -1,25 +1,18 @@
 import styles from "./index.module.scss";
-import classNames from "classnames";
-type PropsType = {
-  containerClassName?: string;
-  animationClassName?: string;
-  textLine: string;
-};
-const FallingText = ({
-  containerClassName,
-  textLine,
-  animationClassName,
-}: PropsType) => {
-  console.log();
-  const items = textLine.split(" ");
 
+const FallingText = () => {
   return (
-    <section className={classNames(styles.container, containerClassName)}>
-      <h1 className={classNames(styles.title, animationClassName)}>
-        {items.map((el) => (
-          <span key={el}>{el}</span>
-        ))}
-      </h1>
+    <section className={styles.container}>
+      <div className={styles.leftContainer}>
+        <p>самая</p>
+        <p>потрясающая</p>
+        <p>команда</p>
+      </div>
+      <div className={styles.rightContainer}>
+        <p>способная</p>
+        <p>сделать</p>
+        <p>всё!</p>
+      </div>
     </section>
   );
 };
