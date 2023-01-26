@@ -42,7 +42,7 @@ const Skills: React.FC<PropsType> = ({ skills, className }) => {
   return (
     <div className={classNames([styles.container, className])}>
       {currentSkills.map((s) => (
-        <Skill id={s.id} name={s.name} />
+        <Skill key={s.id} id={s.id} name={s.name} />
       ))}
     </div>
   );

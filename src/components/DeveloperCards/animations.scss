@@ -1,0 +1,177 @@
+@import "utils/variables.scss";
+.developerCard_menu {
+    position: absolute;
+
+    width: 0px;
+    height: 0px;
+
+    visibility: hidden;
+
+    padding: 18px;
+
+    background-color: $placeholder-color;
+}
+.developerCard_RightMenu {
+    left: 250px;
+    right: 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.developerCard_LeftMenu {
+    right: 250px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.developerCard_menu-enter {
+    visibility: visible;
+    height: 250px;
+    animation-name: open-menu;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards;
+
+    > div {
+        display: flex;
+        animation-name: open-menuContent;
+        animation-duration: 700ms;
+        animation-fill-mode: forwards;
+
+        > div {
+            align-items: flex-start;
+        }
+    }
+}
+.developerCard_menu-enter-done {
+    visibility: visible;
+    height: 250px;
+    width: calc(100% - 250px);
+    > div {
+        display: flex;
+        > div {
+            align-items: flex-start;
+        }
+    }
+}
+
+.developerCard_menu-exit {
+    height: 250px;
+    visibility: visible;
+    animation-name: close-menu;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards;
+
+    > div {
+        display: flex;
+        animation-name: close-menuContent;
+        animation-duration: 0.7s;
+        animation-fill-mode: forwards;
+        > div {
+            align-items: flex-start;
+        }
+    }
+}
+.developerCard_menu-exit-done {
+    padding: 0;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+}
+
+.developerLeftCard-enter {
+    border-radius: 10px 0px 0px 10px;
+}
+.developerLeftCard-enter-done {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.developerLeftCard-exit {
+    animation-name: leftCardBorder;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+.developerLeftCard-exit-done {
+    border-radius: 10px;
+}
+.developerRightCard-enter {
+    border-radius: 0px 10px 10px 0px;
+}
+.developerRightCard-enter-done {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.developerRightCard-exit {
+    animation-name: rightCardBorder;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+.developerRightCard-exit-done {
+    border-radius: 10px;
+}
+
+@keyframes leftCardBorder {
+    0% {
+        border-radius: 10px 0px 0px 10px;
+    }
+    98% {
+        border-radius: 10px 0px 0px 10px;
+    }
+    100% {
+        border-radius: 10px;
+    }
+}
+@keyframes rightCardBorder {
+    0% {
+        border-radius: 0px 10px 10px 0px;
+    }
+    98% {
+        border-radius: 0px 10px 10px 0px;
+    }
+    100% {
+        border-radius: 10px;
+    }
+}
+@keyframes open-menuContent {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes close-menuContent {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+@keyframes open-menu {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: calc(100% - 250px);
+    }
+}
+
+@keyframes close-menu {
+    0% {
+        width: calc(100% - 250px);
+    }
+    90% {
+        padding: 0;
+    }
+    100% {
+        padding: 0;
+        width: 0px;
+    }
+}
